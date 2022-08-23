@@ -21,6 +21,7 @@ With something more robust than `HostBinding()` 😉
     - [Factory class name](#factory-class-name)
     - [Property class name](#property-class-name)
 - [Limitations](#limitations)
+- [Future](#future)
 
 ## Installation
 
@@ -109,7 +110,7 @@ const classFactory = (value: number): string | null => {
 
 @Component()
 export class Component extends ClassBinder('root') {
-  @Input() @BindClass(classFactory) public value: nuber = 0;
+  @Input() @BindClass(classFactory) public value: number = 0;
 }
 ```
 
@@ -143,3 +144,7 @@ type will result in runtime error.
 
   My ideal solution would be to make `ClassBinder` as a class decorator, but as I'm aware Angular won't treat your
   component as injectable, if you extend its constructor via decorator.
+
+## Future
+
+- At some point I would like to bring support for binding classes based on `Observable` value.
